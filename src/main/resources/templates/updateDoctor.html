@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Doctor</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+  <form th:object="${currentDoctor}" method="post" th:action="@{/doctor/updateDoctor}" class="col-md-6 offset-md-3">
+    <div class="form-group">
+      <label for="doctorId">Doctor ID</label>
+      <input type="text" class="form-control" th:field="*{doctorId}" readonly id="doctorId">
+    </div>
+    <div class="form-group">
+      <label for="doctorInformation">Doctor Information</label>
+      <input type="text" class="form-control" th:field="*{doctorInformation}" id="doctorInformation">
+    </div>
+    <div class="form-group">
+      <label for="doctorImage">Doctor Image URL</label>
+      <input type="text" class="form-control" th:field="*{doctorImage}" id="doctorImage">
+    </div>
+    <div class="form-group">
+      <label for="doctorName">Doctor Name</label>
+      <input type="text" class="form-control" th:field="*{doctorName}" id="doctorName">
+    </div>
+    <div class="form-group">
+      <label for="doctorSpecialization">Doctor Specialization</label>
+      <input type="text" class="form-control" th:field="*{doctorSpecialization}" id="doctorSpecialization">
+    </div>
+    <div class="form-group">
+      <label for="doctorContactDetails">Doctor Contact Details</label>
+      <input type="text" class="form-control" th:field="*{doctorContactDetails}" id="doctorContactDetails">
+    </div>
+    <div class="form-group">
+      <label for="doctorWorkSchedule">Doctor Work Schedule</label>
+      <input type="text" class="form-control" th:field="*{doctorWorkSchedule}" id="doctorWorkSchedule">
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+
+</body>
+</html>

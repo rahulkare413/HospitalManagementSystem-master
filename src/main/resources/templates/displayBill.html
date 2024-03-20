@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Bill</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.center {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: flex;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.bill-item {
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bill-details {
+    flex: 1;
+}
+
+.bill-actions {
+    flex-basis: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bill-actions a {
+    padding: 8px 15px;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+p {
+    margin: 5px 0;
+}
+
+strong {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+    </style>
+</head>
+
+<body>
+
+<div class="center">
+    <a class="btn btn-primary" href="/billing/addBill">Add New Bill</a>
+</div>
+
+<div class="container" style="center">
+    <div class="bill-list">
+        <div th:each="data:${displayBill}" class="bill-item">
+            <div class="bill-details">
+                <p><strong>Invoice Id:</strong> <span th:text="${data.invoiceId}"></span></p>
+                <p><strong>Patient Name:</strong> <span th:if="${data.patient != null}" th:text="${data.patient.patientName}"></span></p>
+
+
+                <p><strong>Age:</strong> <span th:text="${data.age}"></span></p>
+                <p><strong>Phone Number:</strong> <span th:text="${data.phoneNumber}"></span></p>
+                <p><strong>Weight:</strong> <span th:text="${data.weight}"></span></p>
+                <p><strong>Height:</strong> <span th:text="${data.height}"></span></p>
+                <p><strong>Amount:</strong> <span th:text="${data.amount}"></span></p>
+                <p><strong>Payment Status:</strong> <span th:text="${data.paymentStatus}"></span></p>
+                <p><strong>Invoice Date:</strong> <span th:text="${data.invoiceDate}"></span></p>
+            </div>
+            <div class="bill-actions">
+                <a class="btn btn-info" th:href="@{/billing/updateBillDetails/{id}(id=${data.invoiceId})}">Update</a>
+                <a class="btn btn-danger" th:href="@{/billing/deleteBill/{id}(id=${data.invoiceId})}">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

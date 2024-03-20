@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Medical Record</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <form th:object="${updateMedicalRecord}" method="post" th:action="@{/medicalRecord/updateMedicalRecord}" class="col-md-6 offset-md-3">
+        <div class="form-group">
+            <label for="recordId">Record Id</label>
+            <input type="text" class="form-control" th:field="*{recordId}" readonly id="recordId">
+        </div>
+        <div class="form-group">
+            <label for="patientId">Patient Id</label>
+            <input type="text" class="form-control" th:field="*{patientId}" readonly id="patientId">
+        </div>
+        <div class="form-group">
+            <label for="diagnosis">Diagnosis</label>
+            <input type="text" class="form-control" th:field="*{diagnosis}" id="diagnosis">
+        </div>
+        <div class="form-group">
+            <label for="treatmentDetails">Treatment Details</label>
+            <input type="text" class="form-control" th:field="*{treatmentDetails}" id="treatmentDetails">
+        </div>
+        <div class="form-group">
+            <label for="medication">Medication</label>
+            <input type="text" class="form-control" th:field="*{medication}" id="medication">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+
+</body>
+</html>

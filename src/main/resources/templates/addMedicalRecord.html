@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Medical Record</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+  <form th:object="${addNewRecord}" method="post" th:action="@{/medicalRecord/addNewMedicalRecord}" class="col-md-6 offset-md-3">
+    <div class="form-group">
+      <label for="patientId">Patient ID:</label>
+      <select class="form-control" th:field="*{patientId}" id="patientId" >
+        <option th:each="patient : ${patients}" th:value="${patient.patientId}" th:text="${patient.patientName}">Patient Name</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="diagnosis">Diagnosis:</label>
+      <input type="text" class="form-control" th:field="*{diagnosis}" id="diagnosis">
+    </div>
+    <div class="form-group">
+      <label for="treatmentDetails">Treatment Details:</label>
+      <input type="text" class="form-control" th:field="*{treatmentDetails}" id="treatmentDetails">
+    </div>
+    <div class="form-group">
+      <label for="medication">Medication:</label>
+      <input type="text" class="form-control" th:field="*{medication}" id="medication">
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+</div>
+
+</body>
+</html>

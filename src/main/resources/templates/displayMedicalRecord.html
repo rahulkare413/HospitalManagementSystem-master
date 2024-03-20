@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Medical Record</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <a class="btn btn-primary" href="/medicalRecord/addMedicalRecord">Add New Medical Record</a>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+    <tr>
+      <th>Medical Record Id</th>
+      <th>Patient Id</th>
+      <th>Diagnosis</th>
+      <th>Treatment Details</th>
+      <th>Medication</th>
+      <th>Operation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="data:${medicalRecord}">
+      <td th:text="${data.recordId}"></td>
+      <td th:text="${data.patientId}"></td>
+      <td th:text="${data.diagnosis}"></td>
+      <td th:text="${data.treatmentDetails}"></td>
+      <td th:text="${data.medication}"></td>
+      <td>
+        <a class="btn btn-info btn-sm" th:href="@{/medicalRecord/updateMedicalRecordDetails/{id}(id=${data.recordId})}">Update</a>
+        <a class="btn btn-danger btn-sm" th:href="@{/medicalRecord/deleteMedicalRecord/{id}(id=${data.recordId})}">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,829 @@
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<html>
+<head>
+  <title>Hospital Website</title>
+  <style>
+
+    .information {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .info-part {
+      flex-basis: 20%;
+      background-color: #f0f0f0;
+      padding: 10px;
+      margin-right: 10px;
+    }
+
+    .card-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      width: 300px;
+      height: 600px;
+      background-color: #f0f0f0;
+      margin-right: 10px;
+    }
+
+    .hospital-info {
+      background-color: #f0f0f0;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .awards-info {
+      background-color: #f0f0f0;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .picture {
+      height: 500px;
+      width: 100%;
+      background-image: url('picture.jpg');
+      background-size: cover;
+    }
+
+    footer {
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+    }
+
+
+
+  /* CSS Styling for Banner Section */
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 540px;
+   margin-top: 33px;
+}
+
+.banner img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.search {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.search input[type="text"],
+.search button {
+  padding: 10px;
+  font-size: 16px;
+}
+.search input[type="text"],
+.search button[type="submit"] {
+  background-color: transparent;
+  border: 1px solid white;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+}
+.search button[type="submit"]:hover {
+  background-color: rgba(0, 123, 255, 0.7);
+}
+
+.search button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.search {
+  position: absolute;
+  top: 70%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+}
+
+.search button:hover {
+  background-color: #0056b3;
+}
+
+/* CSS Styling for Slideshow */
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  width: 100%;
+  display: none;
+}
+
+.slide:first-child {
+  display: block;
+}
+
+
+
+
+
+/* CSS Styling for Grid Picture */
+.grid-picture {
+  margin-top: 20px;
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+}
+
+.grid-item {
+  overflow: hidden;
+
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+}
+
+/* Styling for space with paragraph */
+.space-with-paragraph {
+  margin-top: 20px;
+}
+
+.space-with-paragraph p {
+  margin: 0;
+}
+.space-with-paragraph {
+  margin-top: 20px;
+}
+
+.space-with-paragraph h2 {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.space-with-paragraph p {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  width: 80%;
+  margin: 10px auto;
+}
+
+/* Add space between grid picture and information */
+.grid-picture {
+  margin-bottom: 40px; /* Increase space */
+}
+
+/* Styling for transparent background and space between cards */
+.information {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-part {
+  flex-basis: calc(20% - 20px); /* Adjust width and space between cards */
+  background-color: rgba(255, 255, 255, 0.7); /* Transparent background */
+  padding: 20px;
+  border-left: 1px solid #ccc; /* Vertical line between cards */
+}
+
+.info-part:first-child {
+  border-left: none; /* Remove left border for the first card */
+}
+
+section {
+
+   background-color: #007ea7;/* Replace 'background_image.jpg' with the actual path to your background image */
+  background-size: cover; /* Ensure the background image covers the entire section */
+  background-position: center; /* Center the background image */
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.card {
+ background-image: url('https://cdn.pixabay.com/photo/2019/12/10/10/53/architecture-4685608_1280.jpg');
+  width: 250px; /* Adjust the width of each card */
+  height:420px;
+  color:white;
+  overflow: hidden; /* Hide overflowing content */
+  transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Scale up the card on hover */
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card h3 {
+<!--  background-color: white;-->
+  color: black;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p {
+  margin: 10px 0;
+}
+
+.logo-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-row img {
+  width: 30px; /* Adjust the width of the logos */
+  height: 30px; /* Adjust the height of the logos */
+  transition: transform 1s infinite; /* Continuous rotation */
+}
+
+.logo-row img:hover {
+  animation: rotate 1s infinite; /* Rotate continuously on hover */
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg); /* Rotate 360 degrees */
+  }
+}
+.card-row {
+    display: flex;
+    justify-content: center;
+  }
+  .card {
+    width: 200px;
+    height: 220px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    text-align: center;
+    position: relative; /* Needed for absolute positioning of the icon */
+  }
+  .icon {
+    height:10px;
+    position: absolute; /* Position the icon absolutely within the card */
+    top: 18px; /* Adjust the distance between icon and top of the card */
+    left: 50%; /* Center the icon horizontally */
+    transform: translateX(-50%); /* Center the icon horizontally */
+    font-size: 24px; /* Adjust the font size of the icon */
+    transition: transform 0.5s; /* Smooth transition for rotation */
+  }
+  .icon:hover {
+    transform: translateX(-50%) rotate(180deg); /* Rotate the icon 360 degrees on hover */
+  }
+  .card h3, .card p {
+    margin: 40px 0 10px;
+  }
+
+ .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Adjust the space between rows */
+  }
+
+  .card-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Adjust the space between cards */
+  }
+
+  .card4 {
+    width: 250px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ccc;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align content to the bottom */
+    padding: 20px;
+  }
+
+  .card4:hover {
+    transform: scale(1.10);
+  }
+
+  .card4 h3 {
+    text-align: center;
+    margin-bottom: 20px;
+
+  }
+
+  .card4 p {
+    text-align: center;
+    margin-top: 10px;
+    color: #666; /* Adjust text color */
+  }
+
+  .contents {
+  text-align: center;
+}
+
+.allAwards {
+  display: flex;
+  justify-content: center;
+}
+
+.smallCard {
+  width: 200px;
+  height: 115px;
+  margin: 0 5px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #ccc;
+}
+
+.smallCard1 {
+  background-image: url('https://www.asterhospitals.in/sites/default/files/styles/webp/public/2021-06/toi-icons-of-health-min.jpg.webp?itok=zObNLJYy');
+}
+
+.smallCard2 {
+  background-image: url('https://www.asterhospitals.in/sites/default/files/styles/webp/public/2021-06/Swach-min.jpg.webp?itok=Zk53TmTd');
+}
+
+.smallCard3 {
+  background-image: url('https://www.asterhospitals.in/sites/default/files/styles/webp/public/2021-06/times-healthcare-acheivers-min.jpg.webp?itok=I-xlmKD-');
+}
+
+.smallCard4 {
+  background-image: url('https://www.asterhospitals.in/sites/default/files/styles/webp/public/2021-06/toi-best-hospital-min.jpg.webp?itok=1PwiUPZ8');
+}
+
+.smallCard5 {
+  background-image: url('https://www.asterhospitals.in/sites/default/files/styles/webp/public/2021-06/NABL-min.jpg.webp?itok=fszoEN4G');
+}
+
+.smallCard6 {
+  background-image: url('https://www.asterhospitals.in/sites/default/files/styles/webp/public/2021-06/NABH-min.jpg.webp?itok=9f7X9UaS');
+}
+
+/* Footer container */
+footer {
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+
+/* Footer content */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Left and right sections */
+.left-section,
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+/* Middle section space */
+.middle-section {
+  flex: 1;
+  margin: 0 20px;
+}
+
+/* Icon styles */
+.icon img {
+  width: 40px; /* Adjust as needed */
+  height: 40px; /* Adjust as needed */
+  margin-right: 10px;
+}
+
+/* Text styles */
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.text h3 {
+  margin: 0;
+}
+
+/* Quick links styles */
+.quick-links {
+  margin-bottom: 20px;
+}
+
+.quick-links h3 {
+  margin-bottom: 10px;
+}
+
+..quick-links {
+  margin-bottom: 20px;
+}
+
+.quick-links h3 {
+  margin-bottom: 10px;
+}
+
+.quick-links ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex; /* Set display to flex */
+}
+
+.quick-links ul li {
+  margin-right: 10px; /* Add some space between items */
+}
+
+.quick-links ul li:last-child {
+  margin-right: 0; /* Remove margin for the last item */
+}
+
+.quick-links ul li a {
+  text-decoration: none;
+  color: #333;
+
+.quick-links ul li {
+  margin-bottom: 5px;
+}
+
+.quick-links ul li a {
+  text-decoration: none;
+  color: #333; /* Adjust color as needed */
+}
+
+/* Social icons styles */
+.social-icons {
+  text-align: center;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-icons a img {
+  width: 30px; /* Adjust as needed */
+  height: 30px; /* Adjust as needed */
+}
+
+
+
+  </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav id="navbar" style="position: fixed; width: 100%;  transparent background-color: #e3f2fd; padding: 10px 0; z-index: 1000;">
+  <div class="container d-flex justify-content-between align-items-center">
+<!--    <div class="logo" style="width: 50px; height: ; border-radius: 50%; overflow: hidden;">-->
+<!--      <img src="C:\Users\rahul\Downloads\hospital-logo-zip-file\png\logo-no-background.png" alt="Logo of Hospital" style="width: 100%; height: auto;">-->
+<!--    </div>-->
+    <div class="button" style="display: flex; justify-content: center; align-items: center; margin-top: 5px;">
+      <button onclick="location.href='/doctor/displayDoctors'" class="btn btn-primary mr-2" style="font-size: 15px; background-color: #786fa6; color: white;  padding: 10px 20px; border-radius: 5px;" >🗓️Appointment</button>
+      <span style="margin-right: 50px;"></span>
+      <button onclick="location.href='/patient/displayPatient'" class="btn btn-primary mr-2" style="font-size: 15px; background-color: #786fa6; color: white; padding: 10px 20px; border-radius: 5px;">🚻Patient</button>
+      <span style="margin-right: 50px;"></span>
+      <button onclick="location.href='/medicalRecord/displayAll'" class="btn btn-primary mr-2" style="font-size: 15px; background-color: #786fa6; color: white; padding: 10px 20px; border-radius: 5px;">⏺️Medical Record</button>
+      <span style="margin-right: 50px;"></span>
+      <button onclick="location.href='/billing/displayAll'" class="btn btn-primary" style="font-size: 15px; background-color: #786fa6; color: white; padding: 10px 20px; border-radius: 5px;">💸Bill Record</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Banner -->
+<!-- Banner -->
+<section class="banner">
+  <div class="slideshow-container">
+    <img class="slide" src="https://cdn.pixabay.com/photo/2021/02/03/23/09/hallway-5979689_1280.jpg" alt="Banner Image 1">
+    <img class="slide" src="https://cdn.pixabay.com/photo/2021/07/09/08/11/hospital-6398578_1280.jpg" alt="Banner Image 2">
+    <img class="slide" src="https://cdn.pixabay.com/photo/2023/08/30/15/42/ai-generated-8223597_1280.jpg" alt="Banner Image 3">
+    <img class="slide" src="https://cdn.pixabay.com/photo/2017/08/07/20/05/doctors-2607295_1280.jpg" alt="Banner Image 4">
+    <img class="slide" src="https://cdn.pixabay.com/photo/2014/12/10/21/01/doctor-563428_1280.jpg" alt="Banner Image 5">
+  </div>
+  <div class="search">
+    <form>
+      <input type="text" placeholder="Search">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</section>
+
+<!-- Space with paragraph -->
+<div class="space-with-paragraph">
+  <h2>We’ll Treat You Well</h2>
+  <p>At Aster, we give utmost importance to provide care, attention, and high-quality medical services to our patients. This promise to patients, employees, and society at large is ingrained in the heart of each Asterian and is what inspires us to serve, innovate, and grow.</p>
+</div>
+
+<!-- Grid Picture -->
+<div class="grid-picture">
+  <div class="grid-item"><img src="https://www.asterhospitals.in/sites/default/files/styles/lp_two_col_lg/public/2021-11/aster-hospitals-best-hospital-in-india.jpg.webp?itok=P4BFLQFI" alt="Image 1"></div>
+  <!-- Add more grid items as needed -->
+</div>
+<!-- Information -->
+<div class="information">
+  <div class="info-part">
+    <h2>5</h2>
+    <h4>States</h4>
+    <p>High-quality care closer to you</p>
+  </div>
+  <div class="info-part">
+    <h2>18</h2>
+    <h4>Hospitals</h4>
+    <p>Providing world-class healthcare</p>
+  </div>
+  <div class="info-part">
+    <h2>1600+</h2>
+    <h4>Doctors</h4>
+    <p>Working together to give best medical care</p>
+  </div>
+  <div class="info-part">
+    <h2>40+</h2>
+    <h4>Speciality</h4>
+    <p>Speciality</p>
+  </div>
+  <div class="info-part">
+    <h2>3lac+</h2>
+    <h4>Patient</h4>
+    <p>Treated every year</p>
+  </div>
+</div>
+
+
+<!-- Cards -->
+<section style="height:570px;">
+  <div class="card-row">
+    <!-- Card 1 -->
+    <div class="card" style="height:530px;">
+      <div class="card-content">
+        <h3>Pune Maharashtra</h3>
+        <h2>Pune Maharashtra</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="#" style="text-decoration: underline; color: black;">Get Directions</a>
+        <p>Emergency Number</p>
+        <p>080-4647-4647</p>
+        <br><br>
+        <div class="logo-row">
+          <span style="color:white">🛏️</span> <!-- Desktop Computer Emoji -->
+          <span style="color:white">🩺</span> <!-- Open Book Emoji -->
+          <span style="color:white">🎗️</span> <!-- Rolled-Up Newspaper Emoji -->
+        </div>
+
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="card" style="height:530px;">
+      <div class="card-content">
+        <h3>Pune Maharashtra</h3>
+        <h2>Pune Maharashtra</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="#" style="text-decoration: underline; color: black;">Get Directions</a>
+        <p>Emergency Number</p>
+        <p>080-4647-4647</p>
+        <br><br>
+        <div class="logo-row">
+          <span style="color:white">🛏️</span> <!-- Desktop Computer Emoji -->
+          <span style="color:white">🩺</span> <!-- Open Book Emoji -->
+          <span style="color:white">🎗️</span> <!-- Rolled-Up Newspaper Emoji -->
+        </div>
+
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="card" style="height:530px">
+      <div class="card-content">
+        <h3>Pune Maharashtra</h3>
+        <h2>Pune Maharashtra</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="#" style="text-decoration: underline; color: black;">Get Directions</a>
+        <p>Emergency Number</p>
+        <p>080-4647-4647</p>
+        <br><br>
+        <div class="logo-row">
+          <span>🛏️</span> <!-- Desktop Computer Emoji -->
+          <span>🩺</span> <!-- Open Book Emoji -->
+          <span>🎗️</span> <!-- Rolled-Up Newspaper Emoji -->
+        </div>
+
+      </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="card" style="height:530px;">
+      <div class="card-content">
+        <h3>Pune Maharashtra</h3>
+        <h2>Pune Maharashtra</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="#" style="text-decoration: underline; color: black;">Get Directions</a>
+        <p>Emergency Number</p>
+        <p>080-4647-4647</p>
+        <br><br>
+        <div class="logo-row">
+          <span style="color:white">🛏️</span> <!-- Desktop Computer Emoji -->
+          <span style="color:white">🩺</span> <!-- Open Book Emoji -->
+          <span style="color:white">🎗️</span> <!-- Rolled-Up Newspaper Emoji -->
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Space for Hospital Info -->
+<div class="hospital-info">
+  <h4>... Centres of Excellence</h4>
+  <p>... world-class, Centres of Excellence (COE) are an amalgamation of experienced doctors, state of the art technology, and the highest level of patient care and treatment. Our COE’s ensure that every aspect of your care is seamless and the team of experts work together to provide the care you need.</p>
+</div>
+
+
+<!-- Cards -->
+<div class="card-row">
+  <div class="card">
+    <i class="fas fa-heartbeat icon"></i>
+    <h3>Cardiac Sciences</h3>
+    <p>Heart Care from the Heart.</p>
+  </div>
+  <div class="card">
+    <i class="fas fa-brain icon"></i>
+    <h3>Neuro Sciences</h3>
+    <p>Our Neuroscience Center offers highly advanced diagnosis and treatment 2</p>
+  </div>
+  <div class="card">
+    <i class="fas fa-bone icon"></i>
+    <h3>Orthopaedics</h3>
+    <p>Finest hands working in unison, to get you back on your feet.</p>
+  </div>
+  <div class="card">
+    <i class="fas fa-lungs icon"></i>
+    <h3>Oncology</h3>
+    <p>A multi-layered approach to cancer.</p>
+  </div>
+</div>
+<section style="background-color: #f0f0f0; padding: 20px;">
+  <div class="infoAboutHospital">
+    <h1>Why Choose ...</h1>
+    <p style="font-size: 18px; font-family: Arial, sans-serif;">At ... Hospitals we provide the highest quality of care and a transformative experience for all your healthcare needs. With our network of multi-speciality hospitals, specialised doctors, and world-class technology, we bring global standards of medical care to our patients.</p>
+    <div class="choose">
+      <!-- Content goes here -->
+    </div>
+  </div>
+
+  <!-- Cards for News -->
+  <div class="card-container">
+    <div class="card-row">
+      <div class="card4 card1" style="background-image: url('https://cdn.pixabay.com/photo/2020/11/18/18/06/badge-5756220_1280.jpg'); background-size: cover; background-position: center; color: white;">
+        <h3>Accreditation</h3>
+        <p style="color: white;">Our hospital are accredited by National & International authorities for managing the highest standard of medical care.</p>
+      </div>
+
+      <div class="card4 card2" style="background-image: url('https://images.pexels.com/photos/5327580/pexels-photo-5327580.jpeg?auto=compress&cs=tinysrgb&w=600'); background-size: cover; background-position: center; color: black;">
+        <h3>World-class Doctors</h3>
+        <p style="color: black;">We have highly trained experts & doctors, trained in international institutions, coupled with years of experience to deliver just the right medical outcomes.</p>
+      </div>
+
+      <div class="card4 card3" style="background-image: url('https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=600'); background-size: cover; background-position: center; color: black;">
+        <h3>Accessible Healthcare</h3>
+        <p style="color: black;">We have a unique portfolio to serve the needs of patients in Primary, Secondary, Tertiary and Quaternary Care, Pharmacy, Diagnostic Labs and Digital Health.</p>
+      </div>
+    </div>
+
+    <div class="card-row">
+      <div class="card4 card4" style="background-image: url('https://images.pexels.com/photos/4225880/pexels-photo-4225880.jpeg?auto=compress&cs=tinysrgb&w=600'); background-size: cover; background-position: center; color: white;">
+        <h3>The right Diagnosis</h3>
+        <p style="color: black;">Good clinical outcomes starts with the right diagnosis. Our multi-disciplinary approach does just that.</p>
+      </div>
+
+      <div class="card4 card5" style="background-image: url('https://images.pexels.com/photos/7088535/pexels-photo-7088535.jpeg?auto=compress&cs=tinysrgb&w=600'); background-size: cover; background-position: center; color: white;">
+        <h3>Personalized Care</h3>
+        <p style="color: white;">Aster Hospitals have been a long-time pioneer in personalised health care. Our well qualified, compassionate, experienced and trained nurses, technical team and support staff provide the best circle of care.</p>
+      </div>
+
+      <div class="card4 card6" style="background-image: url('https://images.pexels.com/photos/4167541/pexels-photo-4167541.jpeg?auto=compress&cs=tinysrgb&w=600'); background-size: cover; background-position: center; color: black;">
+        <h3>Safety</h3>
+        <p style="color: black;"> In these unprecedented times, your safety is our prime concern so, that is why we adhere to strict infection control protocols to make your every visit safe and stress-free.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="contents">
+  <h1>Accreditations and Awards</h1>
+  <p>Our awards and accreditations are a testament to our global standards of medical care to our patients.</p>
+  <div class="allAwards">
+    <div class="smallCard smallCard1"></div>
+    <div class="smallCard smallCard2"></div>
+    <div class="smallCard smallCard3"></div>
+    <div class="smallCard smallCard4"></div>
+    <div class="smallCard smallCard5"></div>
+    <div class="smallCard smallCard6"></div>
+
+  </div>
+</div>
+<br><br><br><br>
+<section style="height:500px; width:100%;" >
+  <div style="position: relative;">
+    <img style="height:500px; width:100%;" src="https://cdn.pixabay.com/photo/2020/05/24/23/44/hands-5216585_1280.jpg" alt="Banner Image 1">
+    <h1 style="position: absolute; font-size:35px; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white;">Making the World a Little Better</h1>
+    <button style="position: absolute; top: 70%; left: 50%; transform: translateX(-50%); padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer;">Don't Touch</button>
+  </div>
+</section>
+<br>
+
+
+
+<footer style="background-color:black; color:white;">
+  <div class="footer-content" style="">
+    <div class="left-section">
+      <div class="icon">
+        <!-- Your icon here -->
+      </div>
+      <div class="text">
+        <h3>About Us</h3>
+        <p>Description about your company</p>
+      </div>
+    </div>
+    <div class="middle-section">
+      <!-- Space between left and right sections -->
+    </div>
+    <div class="right-section">
+      <div class="icon">
+        <!-- Your icon here -->
+      </div>
+      <div class="text">
+        <h3>Contact Us</h3>
+        <p>Contact information</p>
+      </div>
+    </div>
+  </div>
+  <div class="quick-links">
+    <h3>Quick Links</h3>
+    <!-- List of quick links -->
+    <ul>
+      <li><a href="#">Quick Link 1</a></li>
+      <li><a href="#">Quick Link 2</a></li>
+      <li><a href="#">Quick Link 3</a></li>
+      <li><a href="#">Quick Link 4</a></li>
+    </ul>
+  </div>
+  <div class="social-icons">
+    <!-- Social media icons -->
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-twitter"></i>
+    <i class="fa-brands fa-square-instagram"></i>
+    <i class="fa-brands fa-snapchat"></i>
+
+    <!-- Add more social media icons as needed -->
+  </div>
+</footer>
+
+
+<script>
+  // JavaScript for Automatic Slideshow
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlides() {
+  // Hide all slides
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+  }
+  // Move to the next slide
+  slideIndex++;
+  // Reset to the first slide if at the end
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  // Display the current slide
+  slides[slideIndex - 1].style.display = 'block';
+  // Change slide every 3 seconds (3000 milliseconds)
+  setTimeout(showSlides, 3000);
+}
+
+// Start the slideshow
+showSlides();
+
+
+
+</script>
+</body>
+</html>

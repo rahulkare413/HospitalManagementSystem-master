@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Bill</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+  <form th:object="${updateBill}" method="post" th:action="@{/billing/updateBill}" class="col-md-6 offset-md-3">
+    <div class="form-group">
+      <label for="invoiceId">Invoice Id</label>
+      <input type="text" class="form-control" th:field="*{invoiceId}" readonly id="invoiceId">
+    </div>
+    <div class="form-group">
+<!--      <label for="patientName">Patient Name</label>-->
+      <select class="form-control" th:field="*{patient}" id="patient">
+        <option th:each="patient : ${patients}" th:value="${patient.patientId}" th:text="${patient.patientName}" readonly>Patient Name</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="patientAge">Patient Age</label>
+      <input type="text" class="form-control" th:field="*{age}" id="patientAge">
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text" class="form-control" th:field="*{phoneNumber}" id="phoneNumber">
+    </div>
+    <div class="form-group">
+      <label for="weight">Patient Weight</label>
+      <input type="text" class="form-control" th:field="*{weight}" id="weight">
+    </div>
+    <div class="form-group">
+      <label for="height">Patient Height</label>
+      <input type="text" class="form-control" th:field="*{height}" id="height">
+    </div>
+    <div class="form-group">
+      <label for="amount">Patient Amount</label>
+      <input type="text" class="form-control" th:field="*{amount}" id="amount">
+    </div>
+    <div class="form-group">
+      <label for="paymentStatus">Patient Payment Status</label>
+      <input type="text" class="form-control" th:field="*{paymentStatus}" id="paymentStatus">
+    </div>
+    <div class="form-group">
+      <label for="invoiceDate">Invoice Date</label>
+      <input type="text" class="form-control" th:field="*{invoiceDate}" id="invoiceDate">
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+
+</body>
+</html>

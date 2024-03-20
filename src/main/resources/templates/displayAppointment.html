@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Appointment</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!--<a href="/appointment/addAppointment">Add New Appointment</a>-->
+<div class="container mt-5">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Appointment Id</th>
+            <th>Doctor Name</th>
+            <th>Full Name</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Phone Number</th>
+            <th>Reason For Visit</th>
+            <th>Appointment Date</th>
+            <th>Medical Conditions</th>
+            <th>Operation</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="data:${list}">
+            <td th:text="${data.appointmentId}"></td>
+            <td th:if="${data.doctor != null}" th:text="${data.doctor.doctorName}"></td>
+            <td th:text="${data.fullName}"></td>
+            <td th:text="${data.dateOfBirth}"></td>
+            <td th:text="${data.gender}"></td>
+            <td th:text="${data.phoneNumber}"></td>
+            <td th:text="${data.reasonForVisit}"></td>
+            <td th:text="${data.appointmentDate}"></td>
+            <td th:text="${data.medicalConditions}"></td>
+
+            <td>
+                <a class="btn btn-danger" th:href="@{/appointment/deleteAppointment/{id}(id=${data.appointmentId})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/homePage/">🏠Home</a>
+</div>
+
+
+
+</body>
+</html>

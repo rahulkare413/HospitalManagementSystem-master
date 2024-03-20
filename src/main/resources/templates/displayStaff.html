@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Details</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mt-4 mb-4">Staff Details</h1>
+    <a class="btn btn-primary mb-3" href="/staff/addStaff">Add New Staff</a>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Staff Id</th>
+                <th>Staff Name</th>
+                <th>Staff Role</th>
+                <th>Staff Contact Details</th>
+                <th>Staff Work Schedule</th>
+                <th>Operation</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="data:${displayStaff}">
+                <td th:text="${data.staffId}"></td>
+                <td th:text="${data.staffName}"></td>
+                <td th:text="${data.staffRole}"></td>
+                <td th:text="${data.staffContactDetails}"></td>
+                <td th:text="${data.staffWorkSchedule}"></td>
+                <td>
+                    <a class="btn btn-info btn-sm" th:href="@{/staff/updateStaff/{id}(id=${data.staffId})}">Update</a>
+                    <a class="btn btn-danger btn-sm" th:href="@{/staff/staffMemberDelete/{id}(id=${data.staffId})}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>

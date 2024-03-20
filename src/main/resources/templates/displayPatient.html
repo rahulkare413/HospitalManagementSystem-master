@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Display Patient</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4">
+  <a class="btn btn-primary mb-3" href="/patient/addPatient">Add New Patient</a>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th>Patient Id</th>
+        <th>Patient Name</th>
+        <th>Patient Address</th>
+        <th>Patient Contact Details</th>
+        <th>Patient Medical History</th>
+        <th>Operation</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="data:${displayPatient}">
+        <td th:text="${data.patientId}"></td>
+        <td th:text="${data.patientName}"></td>
+        <td th:text="${data.patientAddress}"></td>
+        <td th:text="${data.patientContactDetails}"></td>
+        <td th:text="${data.patientMedicalHistory}"></td>
+        <td>
+          <a class="btn btn-info btn-sm" th:href="@{/patient/updatePatient/{id}(id=${data.patientId})}">Update</a>
+          <a class="btn btn-danger btn-sm" th:href="@{/patient/deletePatient/{id}(id=${data.patientId})}">Delete</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

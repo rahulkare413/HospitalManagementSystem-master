@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Doctor List</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .doctor-card {
+            width: 100%;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+        }
+
+        .doctor-image {
+            width: 30%;
+            margin-right: 20px; /* Add space between image and info */
+        }
+
+        .doctor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure image covers the container */
+        }
+
+        .doctor-info {
+            width: 40%;
+            padding: 0 10px;
+        }
+
+        .doctor-buttons {
+            width: 30%;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body style="background-color: #2F4F4F; ">
+<div class="container">
+
+    <div th:each="data:${displayDr}" class="doctor-card">
+        <div class="doctor-image">
+            <img th:src="${data.doctorImage}" alt="Doctor Image">
+        </div>
+        <div class="doctor-info">
+            <p><strong>Doctor Name:Dr.</strong> <span th:text="${data.doctorName}"></span></p>
+            <p><strong>Doctor Information:</strong> <span th:text="${data.doctorInformation}"></span></p>
+            <p><strong>Specialization:</strong> <span th:text="${data.doctorSpecialization}"></span></p>
+            <p><strong>Contact Details:</strong> <span th:text="${data.doctorContactDetails}"></span></p>
+            <p><strong>Work Schedule:</strong> <span th:text="${data.doctorWorkSchedule}"></span></p>
+        </div>
+        <div class="doctor-buttons">
+            <a class="btn btn-info btn-block mb-2" th:href="@{/doctor/updateDoctorDetails/{id}(id=${data.doctorId})}">Update</a>
+            <a class="btn btn-danger btn-block mb-2" th:href="@{/doctor/deleteDoctor/{id}(id=${data.doctorId})}">Delete</a>
+            <a class="btn btn-success btn-block" th:href="@{'/appointment/addAppointment?doctorId=' + ${data.doctorId} + '&doctorName=' + ${data.doctorName} + '&doctorSpecialization=' + ${data.doctorSpecialization}}">Book An Appointment</a>
+        </div>
+    </div>
+    <a class="btn btn-primary" href="/doctor/addDoctor">Add New Doctor</a>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Staff</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+  <form th:object="${addStaff}" method="post" th:action="@{/staff/addNewStaff}" class="col-md-6 offset-md-3">
+    <div class="form-group">
+      <label for="staffName">Staff Name</label>
+      <input type="text" class="form-control" th:field="*{staffName}" id="staffName">
+    </div>
+    <div class="form-group">
+      <label for="staffRole">Staff Role</label>
+      <input type="text" class="form-control" th:field="*{staffRole}" id="staffRole">
+    </div>
+    <div class="form-group">
+      <label for="staffContactDetails">Staff Contact Details</label>
+      <input type="text" class="form-control" th:field="*{staffContactDetails}" id="staffContactDetails">
+    </div>
+    <div class="form-group">
+      <label for="staffWorkSchedule">Staff Work Schedule</label>
+      <input type="text" class="form-control" th:field="*{staffWorkSchedule}" id="staffWorkSchedule">
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+</div>
+
+</body>
+</html>
